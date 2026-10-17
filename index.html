@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player | CodeAlpha Task 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="player">
+        <!-- Header -->
+        <header class="top-bar">
+            <div class="brand">
+                <span class="brand-icon">♫</span>
+                <div>
+                    <h1>Wave</h1>
+                    <p>YOUR MUSIC SPACE</p>
+                </div>
+            </div>
+            <span class="live-badge">
+                <span class="live-dot"></span> MUSIC PLAYER
+            </span>
+        </header>
+
+        <!-- Main Player Layout -->
+        <div class="player-layout">
+
+            <!-- Left: Current Song -->
+            <section class="now-playing">
+                <p class="eyebrow">NOW PLAYING</p>
+
+                <div class="cover-wrapper" id="cover-wrapper">
+                    <img id="cover" src="" alt="Album artwork">
+                    <div class="cover-overlay">♫</div>
+                </div>
+
+                <div class="song-details">
+                    <div>
+                        <h2 id="song-title">Loading...</h2>
+                        <p id="song-artist">Please wait</p>
+                    </div>
+                    <button id="like-btn" class="icon-btn"
+                            aria-label="Toggle favorite" title="Favorite">♡</button>
+                </div>
+
+                <!-- Progress -->
+                <div class="progress-section">
+                    <input type="range" id="progress" min="0" max="100"
+                           value="0" step="0.1" aria-label="Song progress">
+
+                    <div class="time-labels">
+                        <span id="current-time">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                </div>
+
+                <!-- Playback Controls -->
+                <div class="controls">
+                    <button id="shuffle-btn" class="icon-btn"
+                            aria-label="Toggle shuffle" title="Shuffle">⤨</button>
+
+                    <button id="prev-btn" class="icon-btn large"
+                            aria-label="Previous song" title="Previous">|◀</button>
+
+                    <button id="play-btn" class="play-btn"
+                            aria-label="Play music" title="Play">▶</button>
+
+                    <button id="next-btn" class="icon-btn large"
+                            aria-label="Next song" title="Next">▶|</button>
+
+                    <button id="repeat-btn" class="icon-btn"
+                            aria-label="Toggle autoplay" title="Autoplay">↻</button>
+                </div>
+
+                <!-- Volume -->
+                <div class="volume-section">
+                    <button id="mute-btn" class="icon-btn"
+                            aria-label="Mute volume" title="Mute">🔊</button>
+                    <input type="range" id="volume" min="0" max="1"
+                           value="0.7" step="0.01" aria-label="Volume">
+                    <span id="volume-value">70%</span>
+                </div>
+
+                <p id="status" class="status" aria-live="polite">
+                    Ready to play
+                </p>
+            </section>
+
+            <!-- Right: Playlist -->
+            <section class="playlist-section">
+                <div class="playlist-header">
+                    <div>
+                        <p class="eyebrow">YOUR COLLECTION</p>
+                        <h2>Playlist <span id="track-count">(4)</span></h2>
+                    </div>
+                    <span class="playlist-icon">♫</span>
+                </div>
+
+                <div id="playlist" class="playlist"></div>
+
+                <div class="playlist-footer">
+                    <span class="equalizer">♫</span>
+                    <p>Good music. Good mood.</p>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <p>Made with ♡ using HTML, CSS & JavaScript</p>
+            <p>CodeAlpha Internship · Task 3</p>
+        </footer>
+    </main>
+
+    <!-- HTML Audio Element -->
+    <audio id="audio" preload="metadata"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
